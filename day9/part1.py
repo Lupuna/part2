@@ -25,11 +25,11 @@ for raw in itertools.permutations(loc):
     if km < best:
         best = km
 print(best)
-# output = open('output1.txt', 'w')
-# output.write(str(best))
-#
-# output.close()
-# home0.close()
+output = open('output1.txt', 'w')
+output.write(str(best))
+
+output.close()
+home0.close()
 
 
 
