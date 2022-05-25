@@ -3,9 +3,6 @@ import itertools as it
 array = []
 names = []
 
-print('Организуем наиболее комфортное расположение гостей за столом...\n')
-
-# Преобразуем строки в более удобную форму
 with open('input.txt', 'r') as INPUT:
     for line in INPUT:
         line = line.replace('happiness units by sitting next to', '')
@@ -26,7 +23,7 @@ with open('input.txt', 'r') as INPUT:
 
 iter_names_list = list(it.permutations(names))
 
-# Вычисляем значение для каждого перемещения
+
 score_array = []
 for element in iter_names_list:
     score = 0
@@ -53,8 +50,6 @@ for element in iter_names_list:
             for element_array in array:
                 if (element[i] == element_array[0]) and (element[i - 1] == element_array[2]):
                     score += element_array[1]
-
-print('Максимальное количество счастья по расстановке: %s' % max(score_array))
 
 with open('output1.txt', 'w') as OUTPUT:
     OUTPUT.write(str(max(score_array)))
